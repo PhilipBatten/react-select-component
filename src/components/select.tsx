@@ -53,7 +53,6 @@ export function Select({multiple, value, onChange, options}: SelectProps) {
 
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
-            console.log(e.target)
             if (e.target != containerRef.current) return
             switch (e.code) {
                 case "Enter":
@@ -72,6 +71,9 @@ export function Select({multiple, value, onChange, options}: SelectProps) {
                     if (newValue >= 0 && newValue < options.length) {
                         setHighlightedIndex(newValue)
                     }
+                    break
+                case "Escape":
+                    setIsOpen(false)
                     break
             }
         }
