@@ -82,7 +82,7 @@ export function Select({multiple, value, onChange, options}: SelectProps) {
             // eslint-disable-next-line react-hooks/exhaustive-deps
             containerRef.current?.removeEventListener("keydown", handler)
         }
-    }, [isOpen, highlightedIndex, options, selectOption])
+    }, [isOpen, highlightedIndex, options])
 
     return (
         <div 
